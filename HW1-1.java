@@ -39,7 +39,7 @@ class MaxStack {
    // Initialize your data structure in constructor 
    // or here; choice is yours.
 
-   public MaxStack() { // YOUR CODE HERE starrt
+   public MaxStack() { // YOUR CODE HERE
    }
 
    public void push(int x) { // YOUR CODE HERE }
