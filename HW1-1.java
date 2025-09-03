@@ -42,7 +42,8 @@ class MaxStack {
    public MaxStack() { // YOUR CODE HERE
    }
 
-   public void push(int x) { // YOUR CODE HERE }
+   public void push(int x) { // YOUR CODE HERE 
+   }
    public void pop() { // YOUR CODE HERE }
    public int top() { // YOUR CODE HERE }
    public int getMax() { // YOUR CODE HERE }
