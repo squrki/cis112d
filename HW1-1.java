@@ -46,6 +46,7 @@ class MaxStack {
    }
    public void pop() { // YOUR CODE HERE 
    }
-   public int top() { // YOUR CODE HERE }
+   public int top() { // YOUR CODE HERE 
+   }
    public int getMax() { // YOUR CODE HERE }
 }
