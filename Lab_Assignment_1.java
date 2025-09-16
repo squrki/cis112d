@@ -44,7 +44,6 @@ class Solution {
                     return new int[] { i, j };
                 }
             }
-
         }
         return new int[] { -1, -1 };
     }
