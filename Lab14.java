@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LabProgram {
+public class Lab14 {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         int num = scnr.nextInt();
