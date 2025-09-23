@@ -27,6 +27,7 @@ public class Lab14 {
                 roman += "1";
                 num -= place;
             } else {
+
                 roman += "0";
             }
             place *= 2;
