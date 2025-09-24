@@ -9,6 +9,7 @@ public class Lab14 {
         while (num > 0) {
             System.out.print(num % 2);
             num /= 2;
+
             // System.out.printf("num: %d, place: %d\n", num, place);
             // // if place goes into num add to string
             // // subtrace place from num
