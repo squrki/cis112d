@@ -18,6 +18,7 @@ public class Lab22 {
             System.out.printf("%s,", words[i]);
          }
 
+
       }
       System.out.println();
 
