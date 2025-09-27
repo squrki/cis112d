@@ -17,6 +17,7 @@ public class Lab22 {
          if (words[i].contains(ch)) {
             System.out.printf("%s,", words[i]);
          }
+
       }
       System.out.println();
 
