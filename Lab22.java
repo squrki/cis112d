@@ -25,3 +25,13 @@ public class Lab22 {
 
    }
 }
+/*
+ * 
+ * for (int i = 0; i < numElements; i++) {
+ * if (words[i].contains(ch)) {
+ * System.out.printf("%s,", words[i]);
+ * }
+ * 
+ * }
+ * 
+ */
