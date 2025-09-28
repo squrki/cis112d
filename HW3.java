@@ -45,6 +45,8 @@ class Solution {
         }
         // mark current Node
         Node currentNode = head;
+        Node finalNode = head.next;
+        boolean firstIteration = true;
 
         // find last node and 2nd to last node
 
@@ -54,6 +56,13 @@ class Solution {
             while (lastNode.next != null) {
                 secondLastNode = lastNode;
                 lastNode = lastNode.next;
+            }
+            if (firstIteration) {
+                finalNode = lastNode;
+                firstIteration = false;
+            }
+            if (lastNode == finalNode) {
+                break;
             }
             // assign node.next() to last node.next()
             lastNode.next = currentNode.next;
@@ -65,8 +74,6 @@ class Solution {
             currentNode = lastNode.next;
 
             // make 2nd last node to last node and assign null to next
-            // lastNode = secondLastNode;
-            // lastNode.next = null;
             secondLastNode.next = null;
         }
 
