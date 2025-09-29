@@ -39,43 +39,35 @@ class Node {
 
 class Solution {
     public void mixList(Node head) {
-        // if list is single node, return
-        if (head.next == null) {
+
+        // if list is null or single node, return
+        if (head == null || head.next == null) {
             return;
         }
-        // mark current Node
+
+        // mark current Node starting at head
         Node currentNode = head;
-        Node finalNode = head.next;
-        boolean firstIteration = true;
 
-        // find last node and 2nd to last node
-
-        while (currentNode.next != null) {
+        while (currentNode.next != null && currentNode.next.next != null) {
+            // find last node and 2nd to last node
             Node secondLastNode = currentNode;
             Node lastNode = currentNode.next;
             while (lastNode.next != null) {
-                secondLastNode = lastNode;
+                secondLastNode = secondLastNode.next;
                 lastNode = lastNode.next;
             }
-            if (firstIteration) {
-                finalNode = lastNode;
-                firstIteration = false;
-            }
-            if (lastNode == finalNode) {
-                break;
-            }
-            // assign node.next() to last node.next()
+
+            // attach next node to end of last node
             lastNode.next = currentNode.next;
 
-            // assign last node to node.next()
+            // assign last node to currentNode.next()
             currentNode.next = lastNode;
 
-            // assign original node.next() to currentNode
+            // assign original currentNode.next() to new currentNode
             currentNode = lastNode.next;
 
-            // make 2nd last node to last node and assign null to next
+            // assign second last node to last node pointing to null
             secondLastNode.next = null;
         }
-
     }
 }
