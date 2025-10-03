@@ -9,8 +9,10 @@ public class HW4_1 {
 }
 
 /**
- * PURPOSE:
- * PARAMETERS:
+ * PURPOSE: Proportion and distribute resources equally to 'k' medical
+ * facilities
+ * PARAMETERS: resources - positive integer array, groups - 'k' number of
+ * facilities
  * RETURN VALUES:
  */
 class Solution {
