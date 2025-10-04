@@ -59,7 +59,6 @@ class Solution {
         if (resources[0] > allocation)
             return false;
 
-        // Create another solution method of your choice to enable recursion.
         // Create an empty array of integers with k elements.
         int[] buffer = new int[groups];
 
@@ -68,18 +67,9 @@ class Solution {
 
         return checkDivs(resources, buffer, resIndex, allocation);
 
-        // buffer = checkDivs(resources, buffer, resIndex, bufIndex, allocation);
-
-        // // 5. Check if every element in your memory buffer has the same value. If so
-        // you
-        // // have an evenly allocated distribution - return true. False otherwise.
-        // for (int b : buffer) {
-        // if (b != allocation)
-        // return false;
-        // }
-
-        // return true;
     }
+
+    // Create another solution method of your choice to enable recursion.
 
     /**
      * PURPOSE: Recursing helper function for canDistribute()
@@ -95,6 +85,7 @@ class Solution {
         if (resInd >= res.length)
             return true;
 
+        // Check if the selected resource is <= allocation:
         if (res[resInd] <= alloc) {
             for (int i = 0; i < buf.length; i++) {
                 // Check if the selected resource + current buffer element <= allocation:
@@ -119,53 +110,3 @@ class Solution {
 
     }
 }
-// int[] checkDivs(int[] res, int[] buf, int resInd, int bufInd, int alloc) {
-// // base case
-// if (resInd >= res.length)
-// return buf;
-
-// // Check if the selected resource + resource in buffer <= allocation:
-// if (buf[bufInd] + res[resInd] <= alloc) {
-// // If yes, add that value to memory buffer
-// buf[bufInd] += res[resInd];
-// // move to next resource
-// resInd++;
-// bufInd = 0;
-// } else {
-// // if > allocation, move to next buffer element or first buffer element
-// if (bufInd != buf.length - 1)
-// // bufInd = 0;
-// // else
-// bufInd++;
-// }
-
-// buf = checkDivs(res, buf, resInd, bufInd, alloc);
-
-// return buf;
-
-// }
-// }
-// boolean checkDivs(int[] res, int[] bufs, int resInd, int alloc) {
-
-// if (resInd >= res.length)
-// return true;
-
-// int k = buf.length;
-// int currentResource = res[resInd];
-
-// for (int i = 0; i < k; i++) {
-// if (currentResource + buf[i] <= alloc) {
-// buf[i] += currentResource;
-// if (checkDivs(res, buf, resInd + 1, alloc)) {
-// return true;
-// } else {
-// buf[i] -= currentResource;
-// }
-// }
-// if (buf[i] == 0) {
-// break;
-// }
-// }
-
-// return false;
-// }
