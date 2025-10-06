@@ -18,6 +18,7 @@ public class HW2 {
       System.out.println(s.isSameEventSequence(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
             new int[] { 3, 2, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }));
       // true
+
       System.out.println(s.isSameEventSequence(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
             new int[] { 3, 2, 1, 4, 5, 6, 7, 8, 9, 12, 11, 10, 13, 14, 15 }));
 
