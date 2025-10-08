@@ -31,8 +31,8 @@ class Solution {
 
    /**
     * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PARAMETERS: x: integer
+    * RETURN VALUES: None
     */
    public void add(int x) {
       // YOUR CODE HERE
@@ -41,7 +41,7 @@ class Solution {
    /**
     * PURPOSE:
     * PARAMETERS:
-    * RETURN VALUES:
+    * RETURN VALUES: integer
     */
    public int remove() {
       // YOUR CODE HERE
@@ -50,7 +50,7 @@ class Solution {
    /**
     * PURPOSE:
     * PARAMETERS:
-    * RETURN VALUES:
+    * RETURN VALUES: integer
     */
    public int peek() {
       // YOUR CODE HERE
