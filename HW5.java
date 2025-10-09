@@ -44,7 +44,7 @@ class Solution {
     * RETURN VALUES: integer
     */
    public int remove() {
-      // YOUR CODE HERE
+      return 1;
    }
 
    /**
