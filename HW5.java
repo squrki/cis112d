@@ -54,6 +54,7 @@ class Solution {
     */
    public int peek() {
       // YOUR CODE HERE
+      return 1;
    }
 
    /**
