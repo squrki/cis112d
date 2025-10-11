@@ -36,6 +36,7 @@ class Solution {
     */
    public void add(int x) {
       // YOUR CODE HERE
+      return;
    }
 
    /**
