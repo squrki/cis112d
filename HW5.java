@@ -23,8 +23,6 @@ class Solution {
    // PLEASE USE THESE GLOBAL STACKS FOR THIS PROBLEM
    private Stack<Integer> pushStack = new Stack<Integer>();
    private Stack<Integer> popStack = new Stack<Integer>();
-   // Stack<Integer> pushStack = new Stack<Integer>();
-   // Stack<Integer> popStack = new Stack<Integer>();
    /*
     * ====================================
     * !!! DO NOT MODIFY ABOVE THIS LINE !!!
@@ -32,75 +30,73 @@ class Solution {
     */
 
    /**
-    * PURPOSE:
+    * PURPOSE: add item to queue
     * PARAMETERS: x: integer
     * RETURN VALUES: None
     */
    public void add(int x) {
+
+      // move items to popStack
       while (!this.pushStack.empty()) {
          this.popStack.push(this.pushStack.pop());
       }
+
+      // add item to top of popStack
       this.popStack.push(x);
+
+      // move items to pushStack to maintain queue order
       while (!this.popStack.empty()) {
          this.pushStack.push(this.popStack.pop());
       }
-      System.out.println(this.pushStack);
       return;
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES: integer
+    * PURPOSE: remove item from queue
+    * PARAMETERS: none
+    * RETURN VALUES: integer value of removed item in queue
     */
    public int remove() {
-      System.out.println("removing: " + this.pushStack.peek());
+      // removes first item of stack, which on pushStack is first item in queue
       return this.pushStack.pop();
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES: integer
+    * PURPOSE: see value of first item in queue
+    * PARAMETERS: none
+    * RETURN VALUES: integer value of first item in queue
     */
    public int peek() {
-      System.out.println("peeking: " + this.pushStack.peek());
+      // returns first item of stack, which on pushStack is first item in queue
       return this.pushStack.peek();
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PURPOSE: check is queue is empty
+    * PARAMETERS: none
+    * RETURN VALUES: boolean of whether queue is empty
     */
    public boolean isEmpty() {
-      System.out.println(this.pushStack.empty());
+      // checks whether queue (pushStack) is empty
       return this.pushStack.empty();
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PURPOSE: reverse the order of the queue
+    * PARAMETERS: none
+    * RETURN VALUES: none
     */
    public void reverse() {
-      System.out.println("pushStack before reverse: " + this.pushStack);
+      // move items from queue to popStack in reverse order
       while (!this.pushStack.empty()) {
-         System.out.println("last element: " + this.pushStack.elementAt(0));
          this.popStack.push(this.pushStack.elementAt(0));
          this.pushStack.removeElementAt(0);
       }
-      System.out.println("pushStack after emptying: " + this.pushStack + "  |  popStack: " + this.popStack);
 
+      // move items from popStack back to queue
       while (!this.popStack.empty()) {
-         // this.pushStack.push(this.popStack.pop());
-         // System.out.println(this.popStack.lastElement());
-         this.pushStack.push(this.popStack.lastElement());
-         this.popStack.removeElementAt(this.popStack.size() - 1);
-         // System.out.println(this.popStack);
-         // this.popStack.pop();
+         this.pushStack.push(this.popStack.pop());
       }
-      System.out.println("pushStack after reverse: " + this.pushStack + "  |  popStack: " + this.popStack);
 
    }
 
