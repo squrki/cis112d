@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class HW5 {
+public class HW6 {
    public static void main(String[] args) {
       // your solution will be tested w/ random add()'s and remove()'s.
       // Observers like peek(), isEmpty() will be used along the way to validate.
