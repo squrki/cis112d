@@ -79,6 +79,7 @@ class Solution {
     */
    public int remove() {
       // YOUR CODE HERE
+      return -1
    }
 
    /**
