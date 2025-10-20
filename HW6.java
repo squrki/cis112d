@@ -64,12 +64,26 @@ class Solution {
     * 
     * 
     * /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PURPOSE: adding element to queue
+    * PARAMETERS: integer to identify element
+    * RETURN VALUES: none
     */
    public void add(int x) {
       // YOUR CODE HERE
+      if (this.front == -1 && this.rear == -1) {
+         this.front = 0;
+         this.rear = 0;
+         this.numElements++;
+         this.elements[rear] = x;
+         return;
+      }
+      if (this.rear + 1 == this.capacity) {
+         if (this.front + this.numElements == this.rear) {
+
+         }
+      }
+      this.elements[rear] = x;
+
    }
 
    /**
