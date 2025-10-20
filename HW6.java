@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class HW6 {
    public static void main(String[] args) {
       // your solution method will be tested as such, with random sequential input
@@ -49,11 +51,13 @@ class Solution {
 
    // Get the front index
    public int getFront() {
+      System.out.printf("front: %d\n", this.front); // delete
       return this.front;
    }
 
    // Get the rear index
    public int getRear() {
+      System.out.printf("rear: %d\n", this.rear); // delete
       return this.rear;
    }
 
@@ -73,44 +77,57 @@ class Solution {
       if (this.front == -1 && this.rear == -1) {
          this.front = 0;
          this.rear = 0;
-         this.numElements++;
-         this.elements[rear] = x;
-         return;
-      }
-      if (this.rear + 1 == this.capacity) {
-         if (this.front + this.numElements == this.rear) {
-
+      } else {
+         if (this.rear + 1 == this.capacity) {
+            this.rear = 0;
+         } else {
+            this.rear++;
          }
       }
-      this.elements[rear] = x;
-
+      this.elements[this.rear] = x;
+      this.numElements++;
+      System.out.printf("adding: %d | %s\n", x, Arrays.toString(this.elements));
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PURPOSE: remove first element in queue
+    * PARAMETERS: none
+    * RETURN VALUES: first element integer value
     */
    public int remove() {
-      // YOUR CODE HERE
-      return -1
+      int num = this.elements[this.front];
+      this.elements[this.front] = 0;
+      if (this.front + 1 == this.capacity) {
+         this.front = 0;
+      } else {
+         this.front++;
+      }
+      this.numElements--;
+      if (this.numElements == 0) {
+         this.front = -1;
+         this.rear = -1;
+      }
+      System.out.printf("removing: %d\n", num);
+      return num;
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PURPOSE: see first element integer in queue
+    * PARAMETERS: none
+    * RETURN VALUES: integer value of first element
     */
    public int peek() {
-      // YOUR CODE HERE
+      System.out.printf("peeking: %d\n", this.elements[this.front]);
+      return this.elements[this.front];
    }
 
    /**
-    * PURPOSE:
-    * PARAMETERS:
-    * RETURN VALUES:
+    * PURPOSE: check if queue is empty
+    * PARAMETERS: none
+    * RETURN VALUES: boolean value checking if numElements == 0;
     */
    public boolean isEmpty() {
-      // YOUR CODE HERE
+      System.out.printf("is Empty?: %s\n", this.numElements == 0);
+      return this.numElements == 0;
    }
 }
