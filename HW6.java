@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class HW6 {
    public static void main(String[] args) {
       // your solution method will be tested as such, with random sequential input
@@ -51,13 +49,11 @@ class Solution {
 
    // Get the front index
    public int getFront() {
-      System.out.printf("front: %d\n", this.front); // delete
       return this.front;
    }
 
    // Get the rear index
    public int getRear() {
-      System.out.printf("rear: %d\n", this.rear); // delete
       return this.rear;
    }
 
@@ -73,20 +69,24 @@ class Solution {
     * RETURN VALUES: none
     */
    public void add(int x) {
-      // YOUR CODE HERE
-      if (this.front == -1 && this.rear == -1) {
+      // Check if elements is empty
+      // If yes, set front and rear to 0
+      if (this.numElements == 0) {
          this.front = 0;
          this.rear = 0;
       } else {
+         // If no, check if rear is last element in array
          if (this.rear + 1 == this.capacity) {
+            // If yes, set rear to 0
             this.rear = 0;
          } else {
+            // If no, increment rear
             this.rear++;
          }
       }
-      this.elements[this.rear] = x;
+      // Increment numElements and assign value to queue
       this.numElements++;
-      System.out.printf("adding: %d | %s\n", x, Arrays.toString(this.elements));
+      this.elements[this.rear] = x;
    }
 
    /**
@@ -95,19 +95,25 @@ class Solution {
     * RETURN VALUES: first element integer value
     */
    public int remove() {
+      // Get value of front element and reset front element
       int num = this.elements[this.front];
       this.elements[this.front] = 0;
+      // Check if front is at rear of array.
       if (this.front + 1 == this.capacity) {
+         // If yes, assign front to 0
          this.front = 0;
       } else {
+         // If no, increment front
          this.front++;
       }
+      // Decrement numElements
       this.numElements--;
+      // Set front and rear to -1 if numElements is 0
       if (this.numElements == 0) {
          this.front = -1;
          this.rear = -1;
       }
-      System.out.printf("removing: %d\n", num);
+      // return removed value
       return num;
    }
 
@@ -117,7 +123,7 @@ class Solution {
     * RETURN VALUES: integer value of first element
     */
    public int peek() {
-      System.out.printf("peeking: %d\n", this.elements[this.front]);
+      // Return value of front element in queue
       return this.elements[this.front];
    }
 
@@ -127,7 +133,7 @@ class Solution {
     * RETURN VALUES: boolean value checking if numElements == 0;
     */
    public boolean isEmpty() {
-      System.out.printf("is Empty?: %s\n", this.numElements == 0);
+      // Check if array is empty
       return this.numElements == 0;
    }
 }
