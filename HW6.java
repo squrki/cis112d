@@ -2,7 +2,7 @@ public class HW6 {
    public static void main(String[] args) {
       // your solution method will be tested as such, with random sequential input
       // TEST CASE #1: instantiate a queue of capacity = 1
-      Solution sol = new Solution(1);
+      SolutionHW6 sol = new SolutionHW6(1);
       sol.getFront(); // -1
       sol.getRear(); // -1
       sol.add(8);
@@ -15,7 +15,7 @@ public class HW6 {
       sol.getRear(); // -1, when queue is empty
 
       // TEST CASE #2: instantiate a queue of capacity = 3
-      Solution sol2 = new Solution(3);
+      SolutionHW6 sol2 = new SolutionHW6(3);
       sol2.add(1);
       sol2.add(2);
       sol2.add(3);
@@ -28,7 +28,7 @@ public class HW6 {
    }
 }
 
-class Solution {
+class SolutionHW6 { // Rename without 'HW6'
    // Dynamic array size
    private int capacity;
    // Queue
@@ -42,7 +42,7 @@ class Solution {
    private int rear = -1;
 
    // Constructor
-   public Solution(int capacity) {
+   public SolutionHW6(int capacity) {
       this.capacity = capacity;
       this.elements = new int[this.capacity];
    }
