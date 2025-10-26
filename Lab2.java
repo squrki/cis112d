@@ -1,31 +1,31 @@
 public class Lab2 {
     public static void main(String[] args) {
-        Node node = new Node(1);
-        node.next = new Node(2);
-        node.next.next = new Node(3);
-        node.next.next.next = new Node(4);
-        node.next.next.next.next = new Node(5);
+        NodeLab2 node = new NodeLab2(1);
+        node.next = new NodeLab2(2);
+        node.next.next = new NodeLab2(3);
+        node.next.next.next = new NodeLab2(4);
+        node.next.next.next.next = new NodeLab2(5);
         node.next.next.next.next.next = null;
-        Solution sol = new Solution();
+        SolutionLab2 sol = new SolutionLab2();
         sol.printList(node);
     }
 }
 
-class Node {
+class NodeLab2 {
     int val;
-    Node next;
+    NodeLab2 next;
 
-    Node(int x) {
+    NodeLab2(int x) {
         val = x;
     }
 }
 
-class Solution {
-    public void printList(Node head) {
+class SolutionLab2 {
+    public void printList(NodeLab2 head) {
         // YOUR CODE HERE. NOTE THE NEW "HEAD"
         // WILL REMAIN POINTING TO THE SAME REFERENCE
         // NODE AS WHEN IT WAS PASSED IN.
-        Node currNode = head;
+        NodeLab2 currNode = head;
         while (currNode != null) {
             System.out.print(currNode.val);
             currNode = currNode.next;
