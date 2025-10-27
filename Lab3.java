@@ -1,33 +1,33 @@
 public class Lab3 {
    public static void main(String[] args) {
       // just like any problems, whatever you need here, etc.
-      Node node = new Node(1);
-      node.next = new Node(2);
-      node.next.next = new Node(3);
-      node.next.next.next = new Node(4);
-      node.next.next.next.next = new Node(5);
+      NodeLab3 node = new NodeLab3(1);
+      node.next = new NodeLab3(2);
+      node.next.next = new NodeLab3(3);
+      node.next.next.next = new NodeLab3(4);
+      node.next.next.next.next = new NodeLab3(5);
       node.next.next.next.next.next = null;
-      Solution sol = new Solution();
+      SolutionLab3 sol = new SolutionLab3();
       node = sol.reverseList(node);
       sol.printList(node);
    }
 }
 
-class Node {
+class NodeLab3 {
    int val;
-   Node next;
+   NodeLab3 next;
 
-   Node(int x) {
+   NodeLab3(int x) {
       val = x;
    }
 }
 
-class Solution {
-   public Node reverseList(Node n) {
+class SolutionLab3 {
+   public NodeLab3 reverseList(NodeLab3 n) {
       // YOUR CODE HERE
-      Node prev = null;
-      Node current = n;
-      Node next = null;
+      NodeLab3 prev = null;
+      NodeLab3 current = n;
+      NodeLab3 next = null;
       // read next node
       // place next node at head
       // head next is pointed to old head
@@ -47,11 +47,11 @@ class Solution {
       return n;
    }
 
-   public void printList(Node head) {
+   public void printList(NodeLab3 head) {
       // YOUR CODE HERE. NOTE THE NEW "HEAD"
       // WILL REMAIN POINTING TO THE SAME REFERENCE
       // NODE AS WHEN IT WAS PASSED IN.
-      Node currNode = head;
+      NodeLab3 currNode = head;
       while (currNode != null) {
          System.out.print(currNode.val);
          currNode = currNode.next;
