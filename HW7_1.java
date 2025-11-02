@@ -11,6 +11,14 @@ public class HW7_1 {
         System.out.println(iter.next()); // 2
         System.out.println(iter.next()); // 3
         System.out.println(iter.hasNext()); // false
+
+        // TEST CASE #2
+        // List<Integer> ints = new ArrayList<>(Arrays.asList(100));
+        // MyIterator iter = new MyIterator(ints.iterator());
+        // System.out.println(iter.next()); // 100
+        // System.out.println(iter.lookAhead()); // null
+        // System.out.println(iter.next()); // null
+        // System.out.println(iter.hasNext()); // false
     }
 }
 
@@ -20,10 +28,16 @@ class MyIterator implements Iterator<Integer> {
     // ANY GLOBAL VARIABLE DECLARATIONS HERE
     // ==============================================
 
+    protected Integer[] elements;
+    protected int numElements = 0;
+    protected boolean found;
+    protected int location;
+
     public MyIterator(Iterator<Integer> iterator) {
         // ==============================================
         // YOUR INITIALIZATIONS HERE
         // ==============================================
+
     }
 
     /**
