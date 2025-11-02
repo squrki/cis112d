@@ -20,6 +20,7 @@ class Solution:
             if cur_time > dist[node]:
                 continue
 
+
             # 4. Relax neighbors
             for nei, w in graph[node]:
                 new_time = cur_time + w
