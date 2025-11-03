@@ -19,6 +19,7 @@ public class HW7_1 {
         // System.out.println(iter.lookAhead()); // null
         // System.out.println(iter.next()); // null
         // System.out.println(iter.hasNext()); // false
+
     }
 }
 
@@ -28,50 +29,75 @@ class MyIterator implements Iterator<Integer> {
     // ANY GLOBAL VARIABLE DECLARATIONS HERE
     // ==============================================
 
-    protected Integer[] elements;
+    protected ArrayList<Integer> elements = new ArrayList<Integer>();
     protected int numElements = 0;
-    protected boolean found;
-    protected int location;
+    protected int location = 0;
 
     public MyIterator(Iterator<Integer> iterator) {
         // ==============================================
         // YOUR INITIALIZATIONS HERE
         // ==============================================
-
+        while (iterator.hasNext()) {
+            numElements++;
+            elements.add(iterator.next());
+        }
     }
 
     /**
-     * PURPOSE:
-     * PARAMETERS:
-     * RETURN VALUES:
+     * PURPOSE: equivalent function to peek() in a stack or queue.
+     * PARAMETERS: None
+     * RETURN VALUES: Integer
      */
     public Integer lookAhead() {
         // ==============================================
         // YOUR CODE HERE
         // ==============================================
+
+        // if on the last element, return null
+        // if (location >= numElements || location + 1 == numElements) {
+        if (location == numElements) {
+            return null;
+        } else {
+            return elements.get(location);
+        }
     }
 
     /**
-     * PURPOSE:
-     * PARAMETERS:
-     * RETURN VALUES:
+     * PURPOSE: Return next element of ArrayList
+     * PARAMETERS: None
+     * RETURN VALUES: Integer
      */
     @Override
     public Integer next() {
         // ==============================================
         // YOUR CODE HERE
         // ==============================================
+        // }
+
+        // return null if past last element
+        if (location == numElements) {
+            return null;
+        } else {
+            Integer nextNum = elements.get(location);
+            location++;
+            return nextNum;
+        }
     }
 
     /**
-     * PURPOSE:
-     * PARAMETERS:
-     * RETURN VALUES:
+     * PURPOSE: Check if there are elements remaining
+     * PARAMETERS: none
+     * RETURN VALUES: Boolean
      */
     @Override
     public boolean hasNext() {
         // ==============================================
         // YOUR CODE HERE
         // ==============================================
+
+        if (location < numElements) {
+            return true;
+        }
+        return false;
     }
 }
