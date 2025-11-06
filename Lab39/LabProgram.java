@@ -60,6 +60,6 @@ public class LabProgram {
       pw.printf("\nAverages: Midterm1 %.2f, Midterm2 %.2f, Final %.2f\n", mt1 / (double) sNum, mt2 / (double) sNum,
             fin / (double) sNum);
       pw.close();
-
+      line.close();
    }
 }
