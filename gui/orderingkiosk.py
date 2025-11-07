@@ -1,54 +1,80 @@
 import tkinter as tk
 from tkinter import ttk
 
+
 class OrderingKiosk (tk.Tk):
     def __init__(self):
+        # define root
         super().__init__()
         self.title("Ordering Kiosk")
         self.config(bg="yellow")
-        # self.geometry("500x500")
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
-        
 
-        self.nameLabel = tk.Label(self, text="Please enter your name.", anchor="w")
+        # get customer name
+        self.nameLabel = tk.Label(
+            self, text="Please enter your name.", anchor="w", bg="yellow")
         self.nameLabel.grid(row=0, column=0)
         self.name = tk.Entry(self)
         self.name.grid(row=0, column=1)
 
-        self.drinkLabel = tk.Label(self, text="Would you like to add a drink to your order? (check for yes)")
-        self.drinkLabel.grid(row=1,column=0)
-        self.drinkvar=tk.BooleanVar()
+        # get drink order
+        self.drinkLabel = tk.Label(
+            self, text="Would you like to add a drink to your order? (check for yes)", bg="yellow")
+        self.drinkLabel.grid(row=1, column=0)
+        self.drinkvar = tk.BooleanVar()
         self.drinkvar.set(False)
         self.drink = tk.Checkbutton(self, variable=self.drinkvar)
-        self.drink.grid(row=1,column=1)
+        self.drink.grid(row=1, column=1)
 
-        self.entreeLabel = tk.Label(self, text="Please select your entree.")
+        # get entree order
+        self.entreeLabel = tk.Label(
+            self, text="Please select your entree.", bg="yellow")
         self.entreeLabel.grid(row=2, column=0)
-        self.entree = ttk.Combobox(self, values=("hamburger", "pizza", "hotdog"))
+        self.entree = ttk.Combobox(
+            self, values=("Hamburger", "Pizza", "Hot Dog"))
         self.entree.grid(row=2, column=1)
 
-        self.submit = tk.Button(self, text="Submit Order", command=self.submitOrder)
+        # submit button
+        self.submit = tk.Button(self, text="Submit Order",
+                                command=self.submitOrder, bg="light green")
         self.submit.grid(row=3, column=0)
 
-        self.orderName = tk.Label(self)
-        self.orderDrink = tk.Label(self)
-        self.orderEntree = tk.Label(self)
+        # display order
+        self.displayOrder = tk.Label(self, text="Your order:", bg="yellow")
+        self.orderName = tk.Label(self, anchor="w")
+        self.orderDrink = tk.Label(self, anchor="w")
+        self.orderEntree = tk.Label(self, anchor="w")
 
+    # submit order function
     def submitOrder(self):
+        # handle empty name entry
         if self.name.get() == "":
-            self.orderName.configure(text="Please enter your name.", color = "red")
-        if self.orderEntree.get() == "":
-            self.orderEntree.configure(text="Please select an entree.", color = "red")
-        self.orderName.configure(text = self.name.get())
-        txt = "No drink with order"
-        if self.drinkvar.get():
-            txt = "Include drink with order"
-        self.orderDrink.configure(text=txt)
-        self.orderEntree.configure(text=self.entree.get())
-        self.orderName.grid(row=4, column = 0)
-        self.orderDrink.grid(row=5, column = 0)
-        self.orderEntree.grid(row=6, column = 0)
+            self.orderName.configure(text="Please enter your name.", bg="red")
+            self.orderName.grid(row=4, column=0)
+
+        # handle empty entree combobox
+        elif self.entree.get() == "":
+            self.orderEntree.configure(
+                text="Please select an entree.", bg="red")
+            self.orderEntree.grid(row=4, column=0)
+
+        # display order
+        else:
+            self.orderName.configure(
+                text="Name:\t   " + self.name.get().title(), bg="white")
+            txt = "Drink cup?\t   No"
+            if self.drinkvar.get():
+                txt = "Drink cup?\t   Yes"
+            self.orderDrink.configure(text=txt, bg="white")
+            self.orderEntree.configure(
+                text="Entree:\t   " + self.entree.get(), bg="white")
+
+            self.displayOrder.grid(row=5, column=0)
+            self.orderName.grid(row=4, column=1, sticky=tk.EW)
+            self.orderDrink.grid(row=5, column=1, sticky=tk.EW)
+            self.orderEntree.grid(row=6, column=1, sticky=tk.EW)
+
 
 if __name__ == "__main__":
     app = OrderingKiosk()
