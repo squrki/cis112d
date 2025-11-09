@@ -37,33 +37,34 @@ class Solution {
 
     // YOUR MAY ADD ANY GLOBAL VARIABLES,
     // HELPER METHODS, etc., in this class
-    int rootVal = 0;
+    int assets = 0;
     int moves = 0;
 
-    /**
-     * PURPOSE:
-     * PARAMETERS:
-     * RETURN VALUES:
-     */
-    public int checkLeft(BSTNode node) {
-        // YOUR CODE HERE
-        if (node.left == null) {
-            node.val += checkRight(node);
-            if (node.right == null) {
+    // /**
+    //  * PURPOSE:
+    //  * PARAMETERS:
+    //  * RETURN VALUES:
+    //  */
+    // public int checkLeft(BSTNode node) {
+    //     // YOUR CODE HERE
+        
+    //     if (node.left == null) {
+    //         node.val += checkRight(node);
+    //         if (node.right == null) {
 
-            }
-        }
+    //         }
+    //     }
 
-    }
+    // }
 
-    /**
-     * PURPOSE:
-     * PARAMETERS:
-     * RETURN VALUES:
-     */
-    public int checkRight(BSTNode node) {
-        // YOUR CODE HERE
-    }
+    // /**
+    //  * PURPOSE:
+    //  * PARAMETERS:
+    //  * RETURN VALUES:
+    //  */
+    // public int checkRight(BSTNode node) {
+    //     // YOUR CODE HERE
+    // }
 
     /**
      * PURPOSE:
@@ -72,7 +73,22 @@ class Solution {
      */
     public int distribute(BSTNode root) {
         // YOUR CODE HERE
-        rootVal = root.val;
+        if (root.val > 1) {
+            while (root.val > 1) {
+                assets++;
+                root.val--;
+            }
+        } else if (root.val == 0) {
+            root.val++;
+            assets--;
+            moves++;
+        }
+
+        if (root.left != null) {
+            root.val += distribute(root.left);
+        } else if (root.right != null) {
+            root.val += distribute(root.right);
+        }
 
         // get root node value
         // check left
