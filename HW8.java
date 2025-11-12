@@ -52,16 +52,16 @@ public class HW8 {
         // your solution method will be tested with
         // a random tree of your choice
         System.out.println(sol.distribute(tree)); // 2
-        // sol = new Solution();
-        // System.out.println(sol.distribute(tree2)); // 3
-        // sol = new Solution();
-        // System.out.println(sol.distribute(tree3)); // 5
-        // sol = new Solution();
-        // System.out.println(sol.distribute(tree4)); // 13
-        // sol = new Solution();
-        // System.out.println(sol.distribute(tree5)); // 17
-        // sol = new Solution();
-        // System.out.println(sol.distribute(tree6)); // 10
+        sol = new Solution();
+        System.out.println(sol.distribute(tree2)); // 3
+        sol = new Solution();
+        System.out.println(sol.distribute(tree3)); // 5
+        sol = new Solution();
+        System.out.println(sol.distribute(tree4)); // 13
+        sol = new Solution();
+        System.out.println(sol.distribute(tree5)); // 17
+        sol = new Solution();
+        System.out.println(sol.distribute(tree6)); // 10
     }
 }
 
