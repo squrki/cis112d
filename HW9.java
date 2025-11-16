@@ -2,7 +2,7 @@ import java.util.*;
 
 public class HW9 {
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        Solution9 sol = new Solution9();
         // Your solution method will be tested with random input
         // such as the following; the actual test cases will be
         // different
@@ -16,14 +16,14 @@ public class HW9 {
     }
 }
 
-class Solution {
+class Solution9 {
 
     // You may add any global variables here
 
     // define hash map
-    HashMap<String, Integer> map = new HashMap<String, Integer>();;
+    HashMap<String, Integer> map = new HashMap<String, Integer>();
 
-    public Solution() {
+    public Solution9() {
         // YOUR CODE HERE, IF NEEDED
     }
 
