@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.io.IOException;
 
-public class LabProgram {
+public class Lab39Program {
    public static void main(String[] args) throws IOException {
       // Scanner scnr = new Scanner(System.in);
 

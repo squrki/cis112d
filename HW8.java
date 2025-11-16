@@ -4,7 +4,7 @@ public class HW8 {
     public static void main(String[] args) {
 
         // create a solution instance
-        Solution sol = new Solution();
+        Solution8 sol = new Solution8();
 
         // create a random binary tree of your choice
         BSTNode tree = new BSTNode(3); // 2
@@ -52,15 +52,15 @@ public class HW8 {
         // your solution method will be tested with
         // a random tree of your choice
         System.out.println(sol.distribute(tree)); // 2
-        sol = new Solution();
+        sol = new Solution8();
         System.out.println(sol.distribute(tree2)); // 3
-        sol = new Solution();
+        sol = new Solution8();
         System.out.println(sol.distribute(tree3)); // 5
-        sol = new Solution();
+        sol = new Solution8();
         System.out.println(sol.distribute(tree4)); // 13
-        sol = new Solution();
+        sol = new Solution8();
         System.out.println(sol.distribute(tree5)); // 17
-        sol = new Solution();
+        sol = new Solution8();
         System.out.println(sol.distribute(tree6)); // 10
     }
 }
@@ -81,7 +81,7 @@ class BSTNode {
 // DO NOT MODIFY TREE ABOVE THIS LINE
 // ===============================================
 
-class Solution {
+class Solution8 {
 
     // YOUR MAY ADD ANY GLOBAL VARIABLES,
     // HELPER METHODS, etc., in this class
