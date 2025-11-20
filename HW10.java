@@ -39,9 +39,9 @@ class Solution10 {
     // YOU MAY ADD ANY ADDITIONAL METHODS, VARIABLES, ETC., HERE
 
     /**
-     * PURPOSE:
-     * PARAMETERS:
-     * RETURN VALUES:
+     * PURPOSE: Determines the least frequent N integers from the input array
+     * PARAMETERS: input int array, N int
+     * RETURN VALUES: int array of least frequent N integers
      */
     public int[] getN(int[] input, int N) {
         // YOUR CODE HERE
