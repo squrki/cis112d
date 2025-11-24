@@ -28,6 +28,7 @@ public class PhotoLineups {
 
       if (nameList.size() == 0) {
          System.out.println(permList);
+
       } else {
          for (i = 0; i < nameList.size(); i++) {
             name = nameList.get(i);
