@@ -14,5 +14,6 @@
 # To earn bonus points, you can add extra styling or customization to the HTML page, such as using CSS for formatting or incorporating additional visual elements.
 
 
+
 # By completing this assignment, you will not only practice working with user input and file I/O in Python but also gain experience in generating HTML content dynamically from within a Python program.
 
