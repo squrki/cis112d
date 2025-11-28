@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 // then the output is (must match the below ordering):
 
+
 // Julia, Lucas, Mia 
 // Julia, Mia, Lucas
 // Lucas, Julia, Mia
