@@ -1,23 +1,31 @@
 import tkinter as tk
-from tkinter import ttk
+import filemanager as filemanager
+import htmlmaker as htmlmaker
+
+# Components:
+# 1. Content Editing UI(20 Points)
+# Your app will include a GUI application that can read in and
+# modify the text of a webpage you will want to to publish
 
 
-class CMS(tk.Tk):
-    # Components:
-    # 1. Content Editing UI(20 Points)
-    # Your app will include a GUI application that can read in and modify the text of a webpage you will want to to publish
+class cms(tk.Tk):
 
-    # 2. Static Data Storage(10 Points)
-    # You will create a module to retrieve and edit a static file(exp: a JSON file). This will serve as static storage for your app.
-    # Anytime your user edits the content via the GUI the update should be stored in the JSON file.
+    def __init__(self):
+        super().__init__()
+        self.title("Content Management System")
+        self.nameLabel = tk.Label(
+            self, text="Please enter the webpage text: ", anchor="w")
+        self.nameLabel.grid(row=0, column=0)
+        self.textEntry = tk.Text(self, height=5, width=50)
+        self.textEntry.insert("1.0", filemanager.load_content())
+        self.textEntry.grid(row=1, column=0)
+        self.submit = tk.Button(self, text="Submit",
+                                command=self.submit)
+        self.submit.grid(row=2, column=0)
+        self.exit = tk.Button(self, text="Exit", command=self.destroy)
+        self.exit.grid(row=3, column=0)
 
-    # 3. Webpage Creation(10 Points)
-    # Whenever your user edits content, the app should also publish a static webpage file with the revised content, overwriting previous drafts of the site.
-    # Make a module that does this and have the GUI import it as part of the operations of the app.
-
-    # 4. Server File Hosting(20 Points)
-    # You should independently run a webserver that will send the webpage file to any client that requests it.
-    # Users should be able to navigate to the host location via a browser and load the webpage on demand.
-
-    # 5. Class and Module Construction(5 Points)
-    # You will employ classes and modules to construct the various elements of your application.
+    def submit(self):
+        content = self.textEntry.get("1.0", tk.END)
+        filemanager.save_content(content)
+        htmlmaker.writeHTMLFile()
